@@ -25,11 +25,14 @@ struct node {
 			return NULL;
 		if (K == 1)
 			return NULL;
-		int i = 1;
+		int i = 0;
 		node * start = head;
 		while (head != NULL)
 		{
-			if ((i - 1) % K == 0)
+			if (K % 2 != 0)
+			if (head->next == NULL)
+				break;
+			if ((i + 2) % K == 0)
 			{
 				head->next = head->next->next;
 			}
